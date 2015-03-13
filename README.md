@@ -3,8 +3,11 @@ persistent crossplatform online data interface for UE4
 totally free even for commercial projects, released under MIT License
 this project is actually WIP
 
-Here is the UE4 Thread in the boards to connect it in both directions:
+Here is the UE4 Thread in the boards to connect in both directions:
 https://forums.unrealengine.com/showthread.php?62642-UE4AM-free-persistent-online-data-storage-for-MMO-Games
+
+
+[UE4AM Documentation]: http://www.seven-mountains.eu/docs/UE4AM/
 
 Install Notes:
 

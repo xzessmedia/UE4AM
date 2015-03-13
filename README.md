@@ -1,12 +1,10 @@
 # UE4AM
 persistent crossplatform online data interface for UE4
 totally free even for commercial projects, released under MIT License
+this project is actually WIP
 
->> The project is currently in work and not finished yet! 
-
-If you like, work with me on this thing to make it a good free mmo solution for UE4
-Please read the docs in the docs subdirectory (just open /docs/html/index.html in your favourite browser)
-
+Here is the UE4 Thread in the boards to connect it in both directions:
+https://forums.unrealengine.com/showthread.php?62642-UE4AM-free-persistent-online-data-storage-for-MMO-Games
 
 Install Notes:
 
@@ -23,6 +21,8 @@ Additional Steps:
 https://wiki.unrealengine.com/Standalone_Dedicated_Server
 https://wiki.unrealengine.com/Dedicated_Server_Guide_(Windows_%26_Linux)
 
+If you like, work with me on this thing to make it a good free mmo solution for UE4
+Please read the docs in the docs subdirectory (just open /docs/html/index.html in your favourite browser)
 
 Licensing Info:
 This code is released as free Open Source under MIT License
@@ -34,6 +34,15 @@ Really appreciated: Blueprint Part in UE4 as a commit for UE4AM to make it a rou
 Free DropIn MMO or persistent database storage and account handling package
 
 Free Open Source, Free Knowledge, Free Internet for a Free World
+
+
+
+
+
+
+
+
+
 
 
 General Tipps for creating a mmo game in UE4

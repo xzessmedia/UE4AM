@@ -129,10 +129,16 @@ private $accounts;
 	/*! The Install function installs all necessary tables */  
 	function Install()
 	{
-	if($this->IsInstalled()==false)
-	{
-	
-	}
+		if($this->IsInstalled()==false)
+		{
+		// First prepare the query
+		$sql_install_data = '
+		
+		';
+		
+		// Finally execute SQL
+		$database->ExecSql($sql_install_data);
+		}
 	}
 	
 	/*! Checks if Database prerequisites are installed */  

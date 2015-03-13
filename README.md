@@ -2,6 +2,11 @@
 persistent crossplatform online data interface for UE4
 totally free even for commercial projects, released under MIT License
 
+>> The project is currently in work and not finished yet! <<
+
+If you like, work with me on this thing to make it a good free mmo solution for UE4
+Please read the docs in the docs subdirectory
+
 Tipps for creating a mmo game in UE4
 
 - learn how you build a dedicated server in ue4
@@ -16,7 +21,3 @@ https://github.com/ufna/VaRest
 
 - write a blueprint actor class where you handle all functions needed, like registeraccount, login, etc. these functions communicate with your php script you wrote before
 
-
-This php framework will be free for all who are interested in, but you will have to write your own blueprint json communication script!
-I will offer the blueprint part for a minimum of money, soon!
-(between 20-50 EUR)

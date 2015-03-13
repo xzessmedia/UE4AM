@@ -1,0 +1,136 @@
+\hypertarget{class_u_e4___account_handler}{\section{U\-E4\-\_\-\-Account\-Handler Class Reference}
+\label{class_u_e4___account_handler}\index{U\-E4\-\_\-\-Account\-Handler@{U\-E4\-\_\-\-Account\-Handler}}
+}
+
+
+The Account Handler is for registering, updating, authorising player accounts.  
+
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_u_e4___account_handler_a2e5051c30251e26c6da72ea9cfbe864f}{{\bfseries is\-Logged} ()}\label{class_u_e4___account_handler_a2e5051c30251e26c6da72ea9cfbe864f}
+
+\item 
+\hypertarget{class_u_e4___account_handler_aa14f760d541a59acb41ac8eefddafb9b}{\hyperlink{class_u_e4___account_handler_aa14f760d541a59acb41ac8eefddafb9b}{Logout} ()}\label{class_u_e4___account_handler_aa14f760d541a59acb41ac8eefddafb9b}
+
+\begin{DoxyCompactList}\small\item\em Logouts the current User -\/ returns a bool if successful Usage\-: \$accounts-\/$>$\hyperlink{class_u_e4___account_handler_aa14f760d541a59acb41ac8eefddafb9b}{Logout()};. \end{DoxyCompactList}\item 
+\hyperlink{class_u_e4___account_handler_aaab81379e488af03ea2a45a8b3a869a4}{Login} (\$email, \$password)
+\begin{DoxyCompactList}\small\item\em Login a user Returns an int 0 = Login failed 1 = Login succeeded 2 = Password is wrong. \end{DoxyCompactList}\item 
+\hypertarget{class_u_e4___account_handler_a07f33f08153c4014c9e51225db2943c4}{\hyperlink{class_u_e4___account_handler_a07f33f08153c4014c9e51225db2943c4}{Get\-Username} (\$id)}\label{class_u_e4___account_handler_a07f33f08153c4014c9e51225db2943c4}
+
+\begin{DoxyCompactList}\small\item\em Retrieves the Username by int \$id Usage\-: \$username = \$accounts-\/$>$Get\-Username(1);. \end{DoxyCompactList}\item 
+\hypertarget{class_u_e4___account_handler_a7f82701030149995176babfd2741d724}{\hyperlink{class_u_e4___account_handler_a7f82701030149995176babfd2741d724}{Check\-If\-Username\-Is\-Free} (\$username)}\label{class_u_e4___account_handler_a7f82701030149995176babfd2741d724}
+
+\begin{DoxyCompactList}\small\item\em Check if Username is free for registration Usage\-: If(\$accounts-\/$>$Checkif\-Username\-Is\-Free(\char`\"{}\-Hans\char`\"{}) == T\-R\-U\-E) \{ \$accounts-\/$>$Register(..); \}. \end{DoxyCompactList}\item 
+\hypertarget{class_u_e4___account_handler_a64d6faff7acdf23772820fb5a54b53b1}{\hyperlink{class_u_e4___account_handler_a64d6faff7acdf23772820fb5a54b53b1}{Check\-If\-Email\-Is\-Free} (\$email)}\label{class_u_e4___account_handler_a64d6faff7acdf23772820fb5a54b53b1}
+
+\begin{DoxyCompactList}\small\item\em Check if E-\/\-Mail is free for registration Usage\-: If(\$accounts-\/$>$Checkif\-Email\-Is\-Free(\char`\"{}\-Hans@me.\-com\char`\"{}) == T\-R\-U\-E) \{ \$accounts-\/$>$Register(..); \}. \end{DoxyCompactList}\item 
+\hypertarget{class_u_e4___account_handler_a24079ae9534790d1f6b99cd1ea184a63}{\hyperlink{class_u_e4___account_handler_a24079ae9534790d1f6b99cd1ea184a63}{Remove\-Account} (\$userid)}\label{class_u_e4___account_handler_a24079ae9534790d1f6b99cd1ea184a63}
+
+\begin{DoxyCompactList}\small\item\em This removes an account from D\-B Usage\-: \$accounts-\/$>$Remove\-Account(1);. \end{DoxyCompactList}\item 
+\hypertarget{class_u_e4___account_handler_aabb96f46f584fad72399ae15c4f9f1c5}{{\bfseries Generate\-Live\-User\-List} (\$page)}\label{class_u_e4___account_handler_aabb96f46f584fad72399ae15c4f9f1c5}
+
+\item 
+\hypertarget{class_u_e4___account_handler_afe1bf6ac047359c94656c7e1045c856d}{\hyperlink{class_u_e4___account_handler_afe1bf6ac047359c94656c7e1045c856d}{Render\-Online\-Userlist} ()}\label{class_u_e4___account_handler_afe1bf6ac047359c94656c7e1045c856d}
+
+\begin{DoxyCompactList}\small\item\em This renders a list of all Users online Usage\-: \$accounts-\/$>$\hyperlink{class_u_e4___account_handler_afe1bf6ac047359c94656c7e1045c856d}{Render\-Online\-Userlist()};. \end{DoxyCompactList}\item 
+\hypertarget{class_u_e4___account_handler_acd1ece5e2413a2422d27e6ce768f767e}{\hyperlink{class_u_e4___account_handler_acd1ece5e2413a2422d27e6ce768f767e}{Get\-Online\-Users} (\$page)}\label{class_u_e4___account_handler_acd1ece5e2413a2422d27e6ce768f767e}
+
+\begin{DoxyCompactList}\small\item\em This returns an int \$count of all Users online Usage\-: \$count = \$accounts-\/$>$\hyperlink{class_u_e4___account_handler_acd1ece5e2413a2422d27e6ce768f767e}{Get\-Online\-Users()};. \end{DoxyCompactList}\item 
+\hypertarget{class_u_e4___account_handler_a221de2e5da98c36c55bcf232abe15f0c}{{\bfseries Set\-Time} (\$userid, \$params)}\label{class_u_e4___account_handler_a221de2e5da98c36c55bcf232abe15f0c}
+
+\item 
+\hypertarget{class_u_e4___account_handler_a1908680a6760b1256fb20959f0d11ae7}{\hyperlink{class_u_e4___account_handler_a1908680a6760b1256fb20959f0d11ae7}{Send\-Ping} (\$userid)}\label{class_u_e4___account_handler_a1908680a6760b1256fb20959f0d11ae7}
+
+\begin{DoxyCompactList}\small\item\em Send a Ping, required for checking for online users Usage\-: \$accounts-\/$>$Send\-Ping(1);. \end{DoxyCompactList}\item 
+\hypertarget{class_u_e4___account_handler_a36c70407684b1436a2f5e56deb0c7953}{\hyperlink{class_u_e4___account_handler_a36c70407684b1436a2f5e56deb0c7953}{Send\-I\-P\-Ping} ()}\label{class_u_e4___account_handler_a36c70407684b1436a2f5e56deb0c7953}
+
+\begin{DoxyCompactList}\small\item\em Sends I\-P Ping used to detect all clients browsing the pages Will be handled automatically by x\-Lib Usage\-: \$accounts-\/$>$\hyperlink{class_u_e4___account_handler_a36c70407684b1436a2f5e56deb0c7953}{Send\-I\-P\-Ping()};. \end{DoxyCompactList}\item 
+\hyperlink{class_u_e4___account_handler_ad77529ce7c6e199ee187c5ab1ad6088b}{Get\-User\-Data\-From\-D\-B} (\$userid)
+\begin{DoxyCompactList}\small\item\em Get and returns an array of User Data Usage\-: \$userdata = \$accounts-\/$>$Get\-User\-Data\-From\-D\-B(1);. \end{DoxyCompactList}\item 
+\hypertarget{class_u_e4___account_handler_a2c83b3b58f4170d6dce1c1691ba3b74a}{\hyperlink{class_u_e4___account_handler_a2c83b3b58f4170d6dce1c1691ba3b74a}{Sync\-From\-D\-B} (\$userid)}\label{class_u_e4___account_handler_a2c83b3b58f4170d6dce1c1691ba3b74a}
+
+\begin{DoxyCompactList}\small\item\em Sync D\-B Data to current session. \end{DoxyCompactList}\item 
+\hypertarget{class_u_e4___account_handler_ab28ef0e5852924bf2a45cd51500b9505}{\hyperlink{class_u_e4___account_handler_ab28ef0e5852924bf2a45cd51500b9505}{Sync\-And\-Save} (\$userid)}\label{class_u_e4___account_handler_ab28ef0e5852924bf2a45cd51500b9505}
+
+\begin{DoxyCompactList}\small\item\em Sync D\-B Data and save in current session. \end{DoxyCompactList}\item 
+\hypertarget{class_u_e4___account_handler_a9403482ef7fdb211ffb9fa5f3b7e35cd}{\hyperlink{class_u_e4___account_handler_a9403482ef7fdb211ffb9fa5f3b7e35cd}{Get\-Logoff\-Time} (\$userid)}\label{class_u_e4___account_handler_a9403482ef7fdb211ffb9fa5f3b7e35cd}
+
+\begin{DoxyCompactList}\small\item\em Returns the Logoff timestamp. \end{DoxyCompactList}\item 
+\hypertarget{class_u_e4___account_handler_a7afe500be68628a4666221dee41d3b0c}{\hyperlink{class_u_e4___account_handler_a7afe500be68628a4666221dee41d3b0c}{Get\-Register\-Time} (\$userid)}\label{class_u_e4___account_handler_a7afe500be68628a4666221dee41d3b0c}
+
+\begin{DoxyCompactList}\small\item\em Returns the Register timestamp. \end{DoxyCompactList}\item 
+\hypertarget{class_u_e4___account_handler_a520b29af8723896a618d1bb9b65237fd}{\hyperlink{class_u_e4___account_handler_a520b29af8723896a618d1bb9b65237fd}{Get\-Login\-Time} (\$userid)}\label{class_u_e4___account_handler_a520b29af8723896a618d1bb9b65237fd}
+
+\begin{DoxyCompactList}\small\item\em Returns last Login timestamp. \end{DoxyCompactList}\item 
+\hypertarget{class_u_e4___account_handler_a64a469811f53b409679a9ad00cd88172}{\hyperlink{class_u_e4___account_handler_a64a469811f53b409679a9ad00cd88172}{Register} (\$email, \$username, \$password)}\label{class_u_e4___account_handler_a64a469811f53b409679a9ad00cd88172}
+
+\begin{DoxyCompactList}\small\item\em This function is used to register new users returns T\-R\-U\-E if successful or F\-A\-L\-S\-E if not. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_u_e4___account_handler_ae3f4f74a2aff9863a4767269a47aea11}{{\bfseries \$userid}}\label{class_u_e4___account_handler_ae3f4f74a2aff9863a4767269a47aea11}
+
+\item 
+\hypertarget{class_u_e4___account_handler_a92cf3e176f07316293d43782176fdfb2}{{\bfseries \$is\-Logged\-In}}\label{class_u_e4___account_handler_a92cf3e176f07316293d43782176fdfb2}
+
+\item 
+\hypertarget{class_u_e4___account_handler_a0eb82aa5f81cf845de4b36cd653c42cf}{{\bfseries \$username}}\label{class_u_e4___account_handler_a0eb82aa5f81cf845de4b36cd653c42cf}
+
+\item 
+\hypertarget{class_u_e4___account_handler_ad634f418b20382e2802f80532d76d3cd}{{\bfseries \$email}}\label{class_u_e4___account_handler_ad634f418b20382e2802f80532d76d3cd}
+
+\item 
+\hypertarget{class_u_e4___account_handler_a607686ef9f99ea7c42f4f3dd3dbb2b0d}{{\bfseries \$password}}\label{class_u_e4___account_handler_a607686ef9f99ea7c42f4f3dd3dbb2b0d}
+
+\item 
+\hypertarget{class_u_e4___account_handler_a9a4a6fba2208984cabb3afacadf33919}{{\bfseries \$type}}\label{class_u_e4___account_handler_a9a4a6fba2208984cabb3afacadf33919}
+
+\item 
+\hypertarget{class_u_e4___account_handler_a7761545c73201cc400e1d468a66636d0}{{\bfseries \$lastping}}\label{class_u_e4___account_handler_a7761545c73201cc400e1d468a66636d0}
+
+\item 
+\hypertarget{class_u_e4___account_handler_a0d54b0cb14edcb0bb347eec01a221525}{{\bfseries \$regtimestamp}}\label{class_u_e4___account_handler_a0d54b0cb14edcb0bb347eec01a221525}
+
+\item 
+\hypertarget{class_u_e4___account_handler_a91a9e593af480ccdb81d16ef74906469}{{\bfseries \$logintimestamp}}\label{class_u_e4___account_handler_a91a9e593af480ccdb81d16ef74906469}
+
+\item 
+\hypertarget{class_u_e4___account_handler_a559905c675c46edc4098b0aec2c02722}{{\bfseries \$logofftimestamp}}\label{class_u_e4___account_handler_a559905c675c46edc4098b0aec2c02722}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The Account Handler is for registering, updating, authorising player accounts. 
+
+\subsection{Member Function Documentation}
+\hypertarget{class_u_e4___account_handler_ad77529ce7c6e199ee187c5ab1ad6088b}{\index{U\-E4\-\_\-\-Account\-Handler@{U\-E4\-\_\-\-Account\-Handler}!Get\-User\-Data\-From\-D\-B@{Get\-User\-Data\-From\-D\-B}}
+\index{Get\-User\-Data\-From\-D\-B@{Get\-User\-Data\-From\-D\-B}!UE4_AccountHandler@{U\-E4\-\_\-\-Account\-Handler}}
+\subsubsection[{Get\-User\-Data\-From\-D\-B}]{\setlength{\rightskip}{0pt plus 5cm}Get\-User\-Data\-From\-D\-B (
+\begin{DoxyParamCaption}
+\item[{}]{\$userid}
+\end{DoxyParamCaption}
+)}}\label{class_u_e4___account_handler_ad77529ce7c6e199ee187c5ab1ad6088b}
+
+
+Get and returns an array of User Data Usage\-: \$userdata = \$accounts-\/$>$Get\-User\-Data\-From\-D\-B(1);. 
+
+foreach.. \hypertarget{class_u_e4___account_handler_aaab81379e488af03ea2a45a8b3a869a4}{\index{U\-E4\-\_\-\-Account\-Handler@{U\-E4\-\_\-\-Account\-Handler}!Login@{Login}}
+\index{Login@{Login}!UE4_AccountHandler@{U\-E4\-\_\-\-Account\-Handler}}
+\subsubsection[{Login}]{\setlength{\rightskip}{0pt plus 5cm}Login (
+\begin{DoxyParamCaption}
+\item[{}]{\$email, }
+\item[{}]{\$password}
+\end{DoxyParamCaption}
+)}}\label{class_u_e4___account_handler_aaab81379e488af03ea2a45a8b3a869a4}
+
+
+Login a user Returns an int 0 = Login failed 1 = Login succeeded 2 = Password is wrong. 
+
+Usage\-: \$accounts-\/$>$Login(\char`\"{}test@test.\-com\char`\"{},\char`\"{}test\char`\"{}); 
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/\-Users/timkoepsel/\-Desktop/\-Archiv/\-Alter Mist/xzessmedia/\-Webprojects/\-U\-E4\-Account\-Handler/inc/accounthandler.\-php\end{DoxyCompactItemize}

@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">UE4AM
-   &#160;<span id="projectnumber">0.1</span>
+   &#160;<span id="projectnumber">0.12</span>
    </div>
   </td>
  </tr>
@@ -38,6 +38,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li class="current"><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
@@ -100,9 +101,9 @@ Public Member Functions</h2></td></tr>
 &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_e4___account_handler.html#aa14f760d541a59acb41ac8eefddafb9b">Logout</a> ()</td></tr>
 <tr class="memdesc:aa14f760d541a59acb41ac8eefddafb9b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Logouts the current User - returns a bool if successful Usage: $accounts-&gt;<a class="el" href="class_u_e4___account_handler.html#aa14f760d541a59acb41ac8eefddafb9b" title="Logouts the current User - returns a bool if successful Usage: $accounts-&gt;Logout();. ">Logout()</a>;. <br/></td></tr>
 <tr class="separator:aa14f760d541a59acb41ac8eefddafb9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaab81379e488af03ea2a45a8b3a869a4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_e4___account_handler.html#aaab81379e488af03ea2a45a8b3a869a4">Login</a> ($email, $password)</td></tr>
-<tr class="memdesc:aaab81379e488af03ea2a45a8b3a869a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Login a user Returns an int 0 = Login failed 1 = Login succeeded 2 = Password is wrong.  <a href="#aaab81379e488af03ea2a45a8b3a869a4">More...</a><br/></td></tr>
-<tr class="separator:aaab81379e488af03ea2a45a8b3a869a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4a533e4b69f7790e6b74bff620275edc"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_e4___account_handler.html#a4a533e4b69f7790e6b74bff620275edc">Login</a> ($username, $password)</td></tr>
+<tr class="memdesc:a4a533e4b69f7790e6b74bff620275edc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Login a user Returns an int 0 = Login failed 1 = Login succeeded 2 = Password is wrong.  <a href="#a4a533e4b69f7790e6b74bff620275edc">More...</a><br/></td></tr>
+<tr class="separator:a4a533e4b69f7790e6b74bff620275edc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a07f33f08153c4014c9e51225db2943c4"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a07f33f08153c4014c9e51225db2943c4"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_e4___account_handler.html#a07f33f08153c4014c9e51225db2943c4">GetUsername</a> ($id)</td></tr>
 <tr class="memdesc:a07f33f08153c4014c9e51225db2943c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the Username by int $id Usage: $username = $accounts-&gt;GetUsername(1);. <br/></td></tr>
@@ -224,7 +225,7 @@ Data Fields</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="aaab81379e488af03ea2a45a8b3a869a4"></a>
+<a class="anchor" id="a4a533e4b69f7790e6b74bff620275edc"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -232,7 +233,7 @@ Data Fields</h2></td></tr>
           <td class="memname">Login </td>
           <td>(</td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>$email</em>, </td>
+          <td class="paramname"><em>$username</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -249,17 +250,17 @@ Data Fields</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Login a user Returns an int 0 = Login failed 1 = Login succeeded 2 = Password is wrong. </p>
-<p>Usage: $accounts-&gt;Login("test@test.com","test"); </p>
+<p>Usage: $accounts-&gt;Login("itsme","test"); </p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/Users/timkoepsel/Desktop/Archiv/Alter Mist/xzessmedia/Webprojects/UE4AccountHandler/inc/accounthandler.php</li>
+<li>/Users/timkoepsel/Desktop/Archiv/Alter Mist/xzessmedia/Webprojects/UE4AM/inc/accounthandler.php</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Mar 12 2015 09:59:10 for UE4AM by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Mar 13 2015 05:31:47 for UE4AM by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.4
 </small></address>

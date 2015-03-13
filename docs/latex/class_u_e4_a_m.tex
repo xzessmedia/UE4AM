@@ -16,6 +16,8 @@
 \hyperlink{class_u_e4_a_m_ad44656ac65b1fdb9a3b39709c3a757f5}{Install} ()
 \item 
 \hyperlink{class_u_e4_a_m_aa6f5d10a7da2bcf6f31c06df2f7268fe}{Is\-Installed} ()
+\item 
+\hyperlink{class_u_e4_a_m_ac706380317344a4776f5c171383a89bc}{Exit\-With\-Data} (\$data)
 \end{DoxyCompactItemize}
 
 
@@ -36,7 +38,36 @@ to process and handle the whole thing
 {}
 \end{DoxyParamCaption}
 )}}\label{class_u_e4_a_m_a5ac4d50f77454d7af21c76c7a60baf2d}
-The Auth\-C\-M\-D checks if appid and token fit together and then process the command provided by received json array \hypertarget{class_u_e4_a_m_a8487f24bc17a5fb3c440807b12784c39}{\index{U\-E4\-A\-M@{U\-E4\-A\-M}!Init@{Init}}
+The Auth\-C\-M\-D checks if appid and token fit together and then process the command provided by received json array Add your custom commands here which can be later accessed by blueprint
+
+Each command takes its own case
+
+N\-O\-T R\-E\-A\-D\-Y Y\-E\-T -\/ T\-O\-D\-O\-: add functions for all needed commands, see U\-E4\-A\-M\-\_\-\-Account\-Handler or U\-E4\-A\-M\-\_\-\-D\-B\-Handler \begin{DoxyVerb}Following values need to be send by blueprint:
+\end{DoxyVerb}
+ string email, string username, string password \begin{DoxyVerb}Following values need to be send by blueprint:
+\end{DoxyVerb}
+ string username, string password
+
+Update the Account with new Data
+
+Sends a message through the message system, this is not live chat and person don't need to be online same time
+
+Saves the Character to the database
+
+This requires at least the characterid
+
+Sends a Ping to recognize user as connected user
+
+Logouts the User \hypertarget{class_u_e4_a_m_ac706380317344a4776f5c171383a89bc}{\index{U\-E4\-A\-M@{U\-E4\-A\-M}!Exit\-With\-Data@{Exit\-With\-Data}}
+\index{Exit\-With\-Data@{Exit\-With\-Data}!UE4AM@{U\-E4\-A\-M}}
+\subsubsection[{Exit\-With\-Data}]{\setlength{\rightskip}{0pt plus 5cm}Exit\-With\-Data (
+\begin{DoxyParamCaption}
+\item[{}]{\$data}
+\end{DoxyParamCaption}
+)}}\label{class_u_e4_a_m_ac706380317344a4776f5c171383a89bc}
+This function should be called to send Data back to the Blueprint
+
+\$data is a string containing the data encoded in json \hypertarget{class_u_e4_a_m_a8487f24bc17a5fb3c440807b12784c39}{\index{U\-E4\-A\-M@{U\-E4\-A\-M}!Init@{Init}}
 \index{Init@{Init}!UE4AM@{U\-E4\-A\-M}}
 \subsubsection[{Init}]{\setlength{\rightskip}{0pt plus 5cm}Init (
 \begin{DoxyParamCaption}
@@ -50,17 +81,19 @@ The Init Function is the first function you want to start after creating a new i
 {}
 \end{DoxyParamCaption}
 )}}\label{class_u_e4_a_m_ad44656ac65b1fdb9a3b39709c3a757f5}
-The Install function installs all necessary tables \hypertarget{class_u_e4_a_m_aa6f5d10a7da2bcf6f31c06df2f7268fe}{\index{U\-E4\-A\-M@{U\-E4\-A\-M}!Is\-Installed@{Is\-Installed}}
+The Install function installs all necessary tables N\-O\-T R\-E\-A\-D\-Y Y\-E\-T -\/ T\-O\-D\-O\-: loop to read the /inc/\-U\-E4\-A\-M.sql as \$sql\-\_\-install\-\_\-data string \hypertarget{class_u_e4_a_m_aa6f5d10a7da2bcf6f31c06df2f7268fe}{\index{U\-E4\-A\-M@{U\-E4\-A\-M}!Is\-Installed@{Is\-Installed}}
 \index{Is\-Installed@{Is\-Installed}!UE4AM@{U\-E4\-A\-M}}
 \subsubsection[{Is\-Installed}]{\setlength{\rightskip}{0pt plus 5cm}Is\-Installed (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
 )}}\label{class_u_e4_a_m_aa6f5d10a7da2bcf6f31c06df2f7268fe}
-Checks if Database prerequisites are installed $<$ Returns true if prerequisites installed
+Checks if Database prerequisites are installed Check must be more detailed when the whole table structure is final in development
+
+$<$ Returns true if prerequisites installed
 
 $<$ Returns false if prerequisites are not installed 
 
 The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
 \item 
-/\-Users/timkoepsel/\-Desktop/\-Archiv/\-Alter Mist/xzessmedia/\-Webprojects/\-U\-E4\-Account\-Handler/ue4am.\-php\end{DoxyCompactItemize}
+/\-Users/timkoepsel/\-Desktop/\-Archiv/\-Alter Mist/xzessmedia/\-Webprojects/\-U\-E4\-A\-M/ue4am.\-php\end{DoxyCompactItemize}

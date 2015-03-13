@@ -1,5 +1,6 @@
-
 <?php
+require "inc/settings.php";
+
 /*! \mainpage UE4AM - persistent crossplatform online data interface for UE4
  *
  * \section intro_sec Introduction
@@ -30,7 +31,7 @@
  *
  * Don't forget to register the App in UE4AM and create a security token!
  *
- * 
+ * (c) 2014 by Tim Koepsel from Seven-Mountains (www.seven-mountains.eu)
  */
  
 include "/inc/settings.php";
@@ -88,33 +89,59 @@ private $accounts;
 	/*! The AuthCMD checks if appid and token fit together and then process the command provided by received json array */  
 	function AuthCMD()
 	{
+		// First we need to take our received array
 		$received_jsonarray = $json->Receive();
 		
-		$appid = $json_array["appid"];
-		$token = $json_array["token"];
-		$command = $json_array["command"];
+		// And split it up a bit
+		$appid = $received_jsonarray["appid"];
+		$token = $received_jsonarray["token"];
+		$command = $received_jsonarray["command"];
 		
 		if($app->Auth($appid, $token) == true)
 		{
+		
+			/*! Add your custom commands here which can be later accessed by blueprint */
+			/*! Each command takes its own case */
+			
+			/*! NOT READY YET - TODO: add functions for all needed commands, see UE4AM_AccountHandler or UE4AM_DBHandler */
 			switch ($command) {
+			
+				/*! Following values need to be send by blueprint:
+				string email, string username, string password */
 				case "registeraccount":
-				
+				$accounts->Register($received_jsonarray["email"];,$received_jsonarray["username"];,$received_jsonarray["password"];);
 				break; 
 				
+				/*! Following values need to be send by blueprint:
+				string username, string password */
 				case "login":
-				
+				$accounts->Login($received_jsonarray["username"];,$received_jsonarray["password"];);
 				break;
 				
+				/*! Update the Account with new Data */
 				case "updateaccount":
 				
 				break;
 				
+				/*! Sends a message through the message system, this is not live chat and person don't need to be online same time */
 				case "sendmessage":
 				
 				break;
 				
-				case "logout":
+				/*! Saves the Character to the database */
+				/*! This requires at least the characterid */
+				case "savecharacter"
 				
+				break;
+				
+				/*! Sends a Ping to recognize user as connected user */
+				case "sendping";
+				$accounts->SendIPPing();
+				break;
+				
+				/*! Logouts the User */
+				case "logout":
+				$accounts->Logout();
 				break;
 			}
 			return true;
@@ -132,9 +159,9 @@ private $accounts;
 		if($this->IsInstalled()==false)
 		{
 		// First prepare the query
-		$sql_install_data = '
 		
-		';
+		/*! NOT READY YET - TODO: loop to read the /inc/UE4AM.sql  as $sql_install_data string */
+		$sql_install_data = ' ';
 		
 		// Finally execute SQL
 		$database->ExecSql($sql_install_data);
@@ -144,6 +171,8 @@ private $accounts;
 	/*! Checks if Database prerequisites are installed */  
 	function IsInstalled()
 	{
+	
+	/*! Check must be more detailed when the whole table structure is final in development */
 		if(mysql_num_rows(mysql_query("SHOW TABLES LIKE 'ue4am'"))==1) 
 		{
 			return true; /*!< Returns true if prerequisites installed */  
@@ -153,12 +182,21 @@ private $accounts;
 			return false; /*!< Returns false if prerequisites are not installed */  
 		}
 	}
-
+	
+	/*! This function should be called to send Data back to the Blueprint */
+	/*! $data is a string containing the data encoded in json */
+	
+	function ExitWithData($data)
+	{
+		$json->
+	}
 
 
 }
-
-/*! On Script launch init UE4AM and process the command which has been received */  
+ /*! \brief UE4AM Entry Point of the Script
+ * This is the main entry point where we create UE4AM, and start the whole progress
+ * 
+ * On Script launch UE4AM inits and processes the command which has been received */  
 $ue4am = new UE4_AccountManager;
 $ue4am->Init();
 $ue4am->AuthCMD();

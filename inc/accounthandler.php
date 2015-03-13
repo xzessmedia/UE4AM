@@ -1,5 +1,5 @@
 <?php
-
+require "settings.php";
 
 #######################################################
 /*! \brief The Account Handler is for registering, updating, authorising player accounts
@@ -43,13 +43,14 @@ class UE4_AccountHandler {
 	*	2 = Password is wrong
 	*
 	*	Usage:
-	*	$accounts->Login("test@test.com","test");
+	*	$accounts->Login("itsme","test");
 	*/
-    public function Login($email,$password) {
+    public function Login($username,$password) {
         global $database;
+        global $prefix;
         
         
-        $rows = $database->FetchData("users","*","WHERE email='".$email."'");
+        $rows = $database->FetchData($prefix."_users","*","WHERE username='".$username."'");
         
         if (count($rows)==0) {
             return 0;
@@ -101,7 +102,8 @@ class UE4_AccountHandler {
 	*/
     public function GetUsername($id) {
     global $database;
-    $result = $database->FetchData("users","name","WHERE userid=".$id);
+    global $prefix;
+    $result = $database->FetchData($prefix."_users","name","WHERE userid=".$id);
     foreach ($result as $row) {
         return $username = $row['name'];
     }
@@ -118,7 +120,8 @@ class UE4_AccountHandler {
 	*/    
     public function CheckIfUsernameIsFree($username) {
         global $database;
-        $res = $database->FetchData("users","*","WHERE name='".$username."'");
+        global $prefix;
+        $res = $database->FetchData($prefix."_users","*","WHERE name='".$username."'");
         
         if (count($res) == 0) {
             return TRUE;
@@ -135,7 +138,8 @@ class UE4_AccountHandler {
 	*/        
     public function CheckIfEmailIsFree($email) {
         global $database;
-        $res = $database->CountData("users","*","WHERE email='".$email."'");
+        global $prefix;
+        $res = $database->CountData($prefix."_users","*","WHERE email='".$email."'");
         
         if ($res == 0) {
             return TRUE;
@@ -147,28 +151,32 @@ class UE4_AccountHandler {
 	*	Usage:
 	*	$accounts->RemoveAccount(1);
 	*/        
-    public function RemoveAccount($userid) {
+    public function RemoveAccount($userid) 
+    {
         global $database;
+        global $prefix;
         
         $this->Logout();
         
-        if( $database->RemoveData("users","WHERE userid=".$userid)){
+        if( $database->RemoveData($prefix."_users","WHERE userid=".$userid)){
         return TRUE;
         }      else {
             return FALSE;
         }
     }
 	
-	public function GenerateLiveUserList($page)
+  public function GenerateLiveUserList($page)
 	{
 	global $database;
+	global $prefix;
+	
 	$table = new xUIListview;
 	$table->InitWithID("c","liveuserlist");	
 	$table->AddDivider ("Players online:");
 	
 	
 
-	$data = $database->FetchData("users","*","ORDER BY lastping asc");
+	$data = $database->FetchData($prefix."_users","*","ORDER BY lastping asc");
 	foreach ($data as $row) {
 		$userid = $row['userid'];
 		$username = $row['name'];
@@ -214,7 +222,7 @@ $(document).ready(function()
 ");  
 		}
 	}	
-	$counttotal = $database->CountData("users","*","");
+	$counttotal = $database->CountData($prefix."_users","*","");
 	$table->AddDivider ($counttotal." Players Total");
 	
 	
@@ -232,6 +240,8 @@ $str .= $table->GetHtml();
 	*/     
 	public function RenderOnlineUserlist() {
 	global $database;
+	global $prefix;
+	
 	$page = new xUIPage;
 	$page->Init("livePlayers","Players Online","page");
 	$page->StartContent();
@@ -244,7 +254,7 @@ $str .= $table->GetHtml();
 	
 	
 
-	$data = $database->FetchData("users","*","ORDER BY lastping asc");
+	$data = $database->FetchData($prefix."_users","*","ORDER BY lastping asc");
 	foreach ($data as $row) {
 		$userid = $row['userid'];
 		$username = $row['name'];
@@ -291,7 +301,7 @@ $(document).ready(function()
  
 		}
 	}	
-	$counttotal = $database->CountData("users","*","");
+	$counttotal = $database->CountData($prefix."_users","*","");
 	$table->AddDivider ($counttotal." Players Total");
 	
 	
@@ -310,10 +320,11 @@ $(document).ready(function()
 	*/      
     public function GetOnlineUsers($page) {
         global $database;
+        global $prefix;
         
         $Playerscount = 0;
         $guestscount = 0;
-        $total = $database->CountData("users","*","");
+        $total = $database->CountData($prefix."_users","*","");
         $rows = $database->FetchData("clients","*","");
         foreach ($rows as $row) {
             $userid = $row['userid'];
@@ -345,9 +356,9 @@ $(document).ready(function()
     
     public function SetTime($userid,$params) {
         global $database;
+        global $prefix;
         
-        
-        if( $database->UpdateData("users",$params,"WHERE userid='".$userid."'")){
+        if( $database->UpdateData($prefix."_users",$params,"WHERE userid='".$userid."'")){
         return TRUE;
         }      else {
             return FALSE;
@@ -359,8 +370,9 @@ $(document).ready(function()
 	*/      
     public function SendPing($userid) {
         global $database;
+        global $prefix;
         
-        if( $database->UpdateData("users","lastping=".time(),"WHERE userid='".$userid."'")){
+        if( $database->UpdateData($prefix."_users","lastping=".time(),"WHERE userid='".$userid."'")){
         return TRUE;
         }      else {
             return FALSE;
@@ -373,6 +385,8 @@ $(document).ready(function()
 	*/  
     public function SendIPPing() {
         global $database;
+        global $prefix;
+        
         if (! isset($_SERVER['HTTP_X_FORWARDED_FOR'])) {
         $client_ip = $_SERVER['REMOTE_ADDR'];
         }
@@ -390,7 +404,7 @@ $(document).ready(function()
             if ($database->UpdateData("clients","userid='".$_SESSION['userid']."',lastping=".time(),"WHERE ip='".$client_ip."'")) {
                 if(isset($_SESSION['userid']))
 				{
-					if($database->UpdateData("users","lastping=".time(),"WHERE userid='".$_SESSION['userid']."'")) {
+					if($database->UpdateData($prefix."_users","lastping=".time(),"WHERE userid='".$_SESSION['userid']."'")) {
 						return TRUE;
 					}
 				}
@@ -408,8 +422,9 @@ $(document).ready(function()
 	*/  
     public function GetUserDataFromDB($userid) {
         global $database;
+        global $prefix;
         
-        $data = $database->FetchData("users","*","WHERE userid='".$userid."'");
+        $data = $database->FetchData($prefix."_users","*","WHERE userid='".$userid."'");
         return $data;
     }
     
@@ -417,8 +432,9 @@ $(document).ready(function()
 	*/  
     public function SyncFromDB($userid) {
         global $database;
+        global $prefix;
         
-        $data = $database->FetchData("users","*","WHERE userid='".$userid."'");
+        $data = $database->FetchData($prefix."_users","*","WHERE userid='".$userid."'");
         foreach ($data as $key) {
             $this->username = $key['name'];
             $this->password = $key['password'];
@@ -447,6 +463,7 @@ $(document).ready(function()
 	*/  
     public function GetLogoffTime($userid) {
         global $database;
+        global $prefix;
         
         $data = $this->GetUserDataFromDB($userid);
         foreach ($data as $row) {
@@ -459,6 +476,7 @@ $(document).ready(function()
 	*/  
     public function GetRegisterTime($userid) {
         global $database;
+        global $prefix;
         
         $data = $this->GetUserDataFromDB($userid);
         foreach ($data as $row) {
@@ -471,6 +489,7 @@ $(document).ready(function()
 	*/  
     public function GetLoginTime($userid) {
         global $database;
+        global $prefix;
         
         $data = $this->GetUserDataFromDB($userid);
         foreach ($data as $row) {
@@ -484,10 +503,11 @@ $(document).ready(function()
 	*/  
     public function Register($email,$username,$password) {
         global $database;
+        global $prefix;
         if (($this->CheckIfUsernameIsFree($username) == TRUE) && $this->CheckIfEmailIsFree($email) == TRUE) {
             
         
-        if($database->InsertData("users","name,email,password,regtimestamp,logintimestamp,logofftimestamp,type,lastping","'".$username."','".$email."','".$password."','".time()."','".time()."','".time()."','0','".time()."'")) {
+        if($database->InsertData($prefix."_users","name,email,password,regtimestamp,logintimestamp,logofftimestamp,type,lastping","'".$username."','".$email."','".$password."','".time()."','".time()."','".time()."','0','".time()."'")) {
         return TRUE; } } else {
             return FALSE;
         }

@@ -1,0 +1,36 @@
+persistent crossplatform online data interface for U\-E4 totally free even for commercial projects, released under M\-I\-T License this project is actually W\-I\-P
+
+Here is the U\-E4 Thread in the boards to connect in both directions\-: \href{https://forums.unrealengine.com/showthread.php?62642-UE4AM-free-persistent-online-data-storage-for-MMO-Games}{\tt https\-://forums.\-unrealengine.\-com/showthread.\-php?62642-\/\-U\-E4\-A\-M-\/free-\/persistent-\/online-\/data-\/storage-\/for-\/\-M\-M\-O-\/\-Games}
+
+\hyperlink{class_u_e4_a_m}{U\-E4\-A\-M} Documentation\-: \href{http://www.seven-mountains.eu/docs/UE4AM/}{\tt http\-://www.\-seven-\/mountains.\-eu/docs/\-U\-E4\-A\-M/}
+
+Install Notes\-:
+\begin{DoxyEnumerate}
+\item Upload all files to a webspace of your choice with P\-H\-P and My\-S\-Q\-L installed
+\item Edit /inc/settings.php with Notepad and setup your database there
+\item Edit /inc/ue4am.sql with Notepad and setup your characters table (add all fields your game clients will need)
+\item Call the script by navigating to the webspace and calling ue4am.\-php to install all S\-Q\-L Tables
+\end{DoxyEnumerate}
+
+Additional Steps\-:
+\begin{DoxyEnumerate}
+\item Download V\-A\-Rest by U\-F\-N\-A (\href{https://github.com/ufna/VaRest}{\tt https\-://github.\-com/ufna/\-Va\-Rest}) and put the plugin into your U\-E4 Projects /plugins/ subdirectory
+\item Add some custom Events inside your U\-Game\-Instance for Registering, Syncing, Logging in, etc in Blueprint in direct communication with \hyperlink{class_u_e4_a_m}{U\-E4\-A\-M}, see docs for learning how it works. Sync your Player\-State with \hyperlink{class_u_e4_a_m}{U\-E4\-A\-M} on\-Connect i.\-e.
+\item Build a dedicated Server with Unreal Build Tool \href{https://wiki.unrealengine.com/Standalone_Dedicated_Server}{\tt https\-://wiki.\-unrealengine.\-com/\-Standalone\-\_\-\-Dedicated\-\_\-\-Server} \href{https://wiki.unrealengine.com/Dedicated_Server_Guide_(Windows_%26_Linux)}{\tt https\-://wiki.\-unrealengine.\-com/\-Dedicated\-\_\-\-Server\-\_\-\-Guide\-\_\-(\-Windows\-\_\-\%26\-\_\-\-Linux)}
+\end{DoxyEnumerate}
+
+If you like, work with me on this thing to make it a good free mmo solution for U\-E4 Please read the docs in the docs subdirectory (just open /docs/html/index.html in your favourite browser)
+
+Licensing Info\-: This code is released as free Open Source under M\-I\-T License You can use it in non\-Commercial and Commercial Projects
+
+I would be very happy if you work with \hyperlink{class_u_e4_a_m}{U\-E4\-A\-M}, fork it and start enhancing and sharing your great stuff with the Community like i am going to do! Really appreciated\-: Blueprint Part in U\-E4 as a commit for \hyperlink{class_u_e4_a_m}{U\-E4\-A\-M} to make it a round package\-: Free Drop\-In M\-M\-O or persistent database storage and account handling package
+
+Free Open Source, Free Knowledge, Free Internet for a Free World
+
+General Tipps for creating a mmo game in U\-E4
+\begin{DoxyItemize}
+\item learn how you build a dedicated server in ue4 so read this\-: \href{https://wiki.unrealengine.com/Standalone_Dedicated_Server}{\tt https\-://wiki.\-unrealengine.\-com/\-Standalone\-\_\-\-Dedicated\-\_\-\-Server} and this\-: \href{https://wiki.unrealengine.com/Dedicated_Server_Guide_(Windows_%26_Linux)}{\tt https\-://wiki.\-unrealengine.\-com/\-Dedicated\-\_\-\-Server\-\_\-\-Guide\-\_\-(\-Windows\-\_\-\%26\-\_\-\-Linux)}
+\item get familiar with php and take a deep look on \hyperlink{class_u_e4_a_m}{U\-E4\-A\-M} framework in php (this thing) you need the php script to handle communication between the clients and the account. so you feed your client / player state with all needed account player info you received by your php script
+\item to make life easier in U\-E4, download V\-A\-Rest from ufna which gives you the possibility to handle json in blueprint \href{https://github.com/ufna/VaRest}{\tt https\-://github.\-com/ufna/\-Va\-Rest}
+\item write a blueprint actor class where you handle all functions needed, like registeraccount, login, etc. these functions communicate with your php script you wrote before 
+\end{DoxyItemize}

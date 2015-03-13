@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">UE4AM
-   &#160;<span id="projectnumber">0.1</span>
+   &#160;<span id="projectnumber">0.12</span>
    </div>
   </td>
  </tr>
@@ -38,6 +38,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li class="current"><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
@@ -100,6 +101,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ad44656ac65b1fdb9a3b39709c3a757f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa6f5d10a7da2bcf6f31c06df2f7268fe"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_e4_a_m.html#aa6f5d10a7da2bcf6f31c06df2f7268fe">IsInstalled</a> ()</td></tr>
 <tr class="separator:aa6f5d10a7da2bcf6f31c06df2f7268fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac706380317344a4776f5c171383a89bc"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_e4_a_m.html#ac706380317344a4776f5c171383a89bc">ExitWithData</a> ($data)</td></tr>
+<tr class="separator:ac706380317344a4776f5c171383a89bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p><a class="el" href="class_u_e4_a_m.html" title="UE4AM (UE4 AccountManager) This is the main class which handles all communication between database an...">UE4AM</a> (UE4 AccountManager) This is the main class which handles all communication between database and clients. </p>
@@ -120,6 +123,37 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>The AuthCMD checks if appid and token fit together and then process the command provided by received json array </p>
+<p>Add your custom commands here which can be later accessed by blueprint</p>
+<p>Each command takes its own case</p>
+<p>NOT READY YET - TODO: add functions for all needed commands, see UE4AM_AccountHandler or UE4AM_DBHandler </p>
+<pre class="fragment">Following values need to be send by blueprint:
+</pre><p> string email, string username, string password </p>
+<pre class="fragment">Following values need to be send by blueprint:
+</pre><p> string username, string password</p>
+<p>Update the Account with new Data</p>
+<p>Sends a message through the message system, this is not live chat and person don't need to be online same time</p>
+<p>Saves the Character to the database</p>
+<p>This requires at least the characterid</p>
+<p>Sends a Ping to recognize user as connected user</p>
+<p>Logouts the User </p>
+
+</div>
+</div>
+<a class="anchor" id="ac706380317344a4776f5c171383a89bc"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ExitWithData </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>$data</em>)</td><td></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>This function should be called to send Data back to the Blueprint</p>
+<p>$data is a string containing the data encoded in json </p>
 
 </div>
 </div>
@@ -152,6 +186,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>The Install function installs all necessary tables </p>
+<p>NOT READY YET - TODO: loop to read the /inc/UE4AM.sql as $sql_install_data string </p>
 
 </div>
 </div>
@@ -168,18 +203,19 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>Checks if Database prerequisites are installed </p>
+<p>Check must be more detailed when the whole table structure is final in development</p>
 <p>&lt; Returns true if prerequisites installed</p>
 <p>&lt; Returns false if prerequisites are not installed </p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/Users/timkoepsel/Desktop/Archiv/Alter Mist/xzessmedia/Webprojects/UE4AccountHandler/ue4am.php</li>
+<li>/Users/timkoepsel/Desktop/Archiv/Alter Mist/xzessmedia/Webprojects/UE4AM/ue4am.php</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Mar 12 2015 09:59:10 for UE4AM by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Mar 13 2015 05:31:47 for UE4AM by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.4
 </small></address>

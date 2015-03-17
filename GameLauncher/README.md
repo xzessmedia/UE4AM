@@ -1,4 +1,4 @@
-# UE4AM
+# UE4AM GAME LAUNCHER
 
 Install Steps for the GameLauncher:
 

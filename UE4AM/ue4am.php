@@ -1,5 +1,4 @@
 <?php
-require "inc/settings.php";
 
 /*! \mainpage UE4AM - persistent crossplatform online data interface for UE4
  *
@@ -34,10 +33,12 @@ require "inc/settings.php";
  * (c) 2014 by Tim Koepsel from Seven-Mountains (www.seven-mountains.eu)
  */
  
-include "/inc/settings.php";
-include "/inc/log.php";
-include "/inc/dbhandler.php";
-include "/inc/accounthandler.php";
+require "inc/settings.php";
+require "inc/log.php";
+require "inc/dbhandler.php";
+require "inc/accounthandler.php";
+require "inc/jsonhandler.php";
+require "inc/apphandler.php";
 
 /**
  * UE4AM (UE4 AccountManager)
@@ -80,15 +81,14 @@ private $accounts;
 	/*! The Init Function is the first function you want to start after creating a new instance */  
 	function Init()
 	{
-	global $log;
 		
 		
 		
 		$this->log->AddLog("UE4AM DB Handler loaded");
 		
-		$log->AddLog("UE4AM Account Handler loaded");
+		$this->log->AddLog("UE4AM Account Handler loaded");
 		
-		$log->AddLog("UE4AM init complete");
+		$this->log->AddLog("UE4AM init complete");
 		
 		
 	}
@@ -102,18 +102,18 @@ private $accounts;
 		global $json;
 		
 		// First we need to take our received array
-		$received_jsonarray = $json->Receive();
-		$log->AddLog("Json received");
+		$received_jsonarray = $this->json->Receive();
+		$this->log->AddLog("Json received");
 		
 		// And split it up a bit
 		$appid = $received_jsonarray["appid"];
 		$token = $received_jsonarray["token"];
 		$command = $received_jsonarray["command"];
 		
-		$log->AddLog("Appid: ".$appid);
-		$log->AddLog("Security Token: ".$token);
+		$this->log->AddLog("Appid: ".$appid);
+		$this->log->AddLog("Security Token: ".$token);
 		
-		if($app->Auth($appid, $token) == true)
+		if($this->apps->Auth($appid, $token) == true)
 		{
 		
 			/*! Add your custom commands here which can be later accessed by blueprint */
@@ -125,13 +125,13 @@ private $accounts;
 				/*! Following values need to be send by blueprint: 
 				string email, string username, string password */
 				case "registeraccount":
-				$accounts->Register($received_jsonarray["email"];,$received_jsonarray["username"];,$received_jsonarray["password"];);
+				$this->accounts->Register($received_jsonarray["email"],$received_jsonarray["username"],$received_jsonarray["password"]);
 				break; 
 				
 				/*! Following values need to be send by blueprint: 
 				string username, string password */
 				case "login":
-				$accounts->Login($received_jsonarray["username"];,$received_jsonarray["password"];);
+				$this->accounts->Login($received_jsonarray["username"],$received_jsonarray["password"]);
 				break;
 				
 				/*! Update the Account with new Data */
@@ -146,18 +146,18 @@ private $accounts;
 				
 				/*! Saves the Character to the database */
 				/*! This requires at least the characterid */
-				case "savecharacter"
+				case "savecharacter":
 				
 				break;
 				
 				/*! Sends a Ping to recognize user as connected user */
-				case "sendping";
-				$accounts->SendIPPing();
+				case "sendping":
+				$this->accounts->SendIPPing();
 				break;
 				
 				/*! Logouts the User */
 				case "logout":
-				$accounts->Logout();
+				$this->accounts->Logout();
 				break;
 			}
 			return true;
@@ -180,7 +180,7 @@ private $accounts;
 		$sql_install_data = file_get_contents("inc/ue4am.sql");
 		
 		// Finally execute SQL
-		$database->ExecSql($sql_install_data);
+		$this->database->ExecSql($sql_install_data);
 		}
 	}
 	
@@ -204,7 +204,7 @@ private $accounts;
 	
 	function ExitWithData($data)
 	{
-		$json->
+		
 	}
 
 
@@ -213,9 +213,8 @@ private $accounts;
  * This is the main entry point where we create UE4AM, and start the whole progress
  * 
  * On Script launch UE4AM inits and processes the command which has been received */  
-$ue4am = new UE4_AccountManager();
+$ue4am = new UE4AM();
 $ue4am->Init();
 $ue4am->AuthCMD();
-
 
 ?>

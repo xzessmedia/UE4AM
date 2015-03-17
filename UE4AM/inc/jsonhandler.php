@@ -1,5 +1,5 @@
 <?php
-require "settings.php";
+
 /*! \brief The Json Handler is decoding and encoding data between clients and the database
 */
 class UE4_JsonHandler

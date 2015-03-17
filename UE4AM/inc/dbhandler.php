@@ -1,5 +1,4 @@
 <?php
-require "settings.php";
 
 /*! \brief UE4AM DB Handler
  * This class will be instanced by UE4_AccountManager class.
@@ -15,7 +14,7 @@ class UE4_DBHandler
  *
  */
  function __construct() {
-        $this->Connect;
+        $this->Connect();
  }
 
 

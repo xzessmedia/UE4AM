@@ -1,7 +1,4 @@
-# UE4AM
-persistent crossplatform online data interface for UE4
-
-
+# UE4AM BLUEPRINTS
 
 Install Notes for the Blueprints:
 

@@ -1,7 +1,7 @@
 <?php
 /*! \brief very simple but helpful log class, which outputs a log.txt on script launch
 */
-require("settings.php")
+
 class UE4AM_Log {
 	private $logcontent;
 	

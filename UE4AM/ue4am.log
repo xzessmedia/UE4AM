@@ -204,3 +204,23 @@ Recording Time: 17.03.2015 10:20:01
 [4] >> Json received
 [5] >> Appid: 
 [6] >> Security Token: 
+*****************************************************
+*****************************************************
+UE4AM new logging init
+Recording Time: 17.03.2015 10:37:22
+[1] >> UE4AM DB Handler loaded
+[2] >> UE4AM Account Handler loaded
+[3] >> UE4AM init complete
+[4] >> Json received
+[5] >> Appid: 
+[6] >> Security Token: 
+*****************************************************
+*****************************************************
+UE4AM new logging init
+Recording Time: 17.03.2015 20:03:07
+[1] >> UE4AM DB Handler loaded
+[2] >> UE4AM Account Handler loaded
+[3] >> UE4AM init complete
+[4] >> Json received
+[5] >> Appid: 
+[6] >> Security Token: 

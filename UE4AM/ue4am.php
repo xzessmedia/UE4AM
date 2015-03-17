@@ -150,6 +150,11 @@ private $accounts;
 				
 				break;
 				
+				case "execsql":
+				$this->database->ExecSql($received_jsonarray["sql"]);
+				$this->log->AddLog("SQL executed: ".$received_jsonarray["sql"]);
+				break;
+				
 				/*! Sends a Ping to recognize user as connected user */
 				case "sendping":
 				$this->accounts->SendIPPing();

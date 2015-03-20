@@ -16,11 +16,13 @@ SOURCES += main.cpp\
         mainwindow.cpp \
     gameupdater.cpp \
     settings.cpp \
-    updatewindow.cpp
+    updatewindow.cpp \
+    jsonhandler.cpp
 
 HEADERS  += mainwindow.h \
     gameupdater.h \
     settings.h \
-    updatewindow.h
+    updatewindow.h \
+    jsonhandler.h
 
 FORMS    += mainwindow.ui

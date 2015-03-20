@@ -56,4 +56,6 @@ class UE4AM_Log {
 	}
 }
 
+// important pointers as global vars
+$log = new UE4AM_Log();
 ?>

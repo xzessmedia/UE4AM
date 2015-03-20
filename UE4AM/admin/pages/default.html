@@ -1,0 +1,52 @@
+<?php
+require("../ue4am.php");
+
+
+function OnlinePlayers()
+{
+global $database;
+global $prefix;
+        $Playerscount = 0;
+        $guestscount = 0;
+        $total = $database->CountData($prefix.'_users',"*","");
+        $rows = $database->FetchData($prefix.'_users',"*","");
+        foreach ($rows as $row) {
+            $userid = $row['userid'];
+            $lastping = $row['lastping'];
+        $total++;
+                if ((time()-1200)<$lastping) {
+                    if (!$userid) {
+                        $guestscount++;
+                    } else {
+                        $Playerscount++;
+                    }
+                }
+              }
+                return $Playerscount;
+}
+?>
+<section class="panel">
+                              <header class="panel-heading">
+                                  Dashboard Frontpage
+                              </header>
+                              <div class="panel-body">
+                                 
+			
+		<div class="panel panel-info">
+		<p>Players online: 
+		<?php
+		
+		echo OnlinePlayers();
+		?>
+		</p>
+		</div>
+		
+		<div class="jumbotron">
+		  <h1>Welcome, <?php echo $_SESSION['username']; ?></h1>
+		  <p>...</p>
+		  <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
+		</div>
+
+
+                              </div>
+                          </section>

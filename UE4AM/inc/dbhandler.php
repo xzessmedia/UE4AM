@@ -5,7 +5,7 @@
  * It always provides fast and easy database access
  * it can be called by using $database->FetchData(..); i.e.
  */
-class UE4_DBHandler
+class UE4AM_DBHandler
 {
     /// Public bool if database is connected to MYSQLDB
     public $isConnected = false;
@@ -99,6 +99,15 @@ public function ClearTable($table) {
         $result = mysql_query('TRUNCATE TABLE '.$table) or die (mysql_error()); 
 		return($result);
 }
+//! Protect a string to avoid SQL Injections
+//! Returns the protected string
+public function ProtectString($string)
+{
+$protectedstring = stripslashes($string);
+$protectedstring = mysql_real_escape_string($string);
+
+return $protectedstring;
+}
 
 private function getSCArray() { return array( 'Ã¼'=>'ü', 'Ã¤'=>'ä', 'Ã¶'=>'ö', 'Ã–'=>'Ö', 'ÃŸ'=>'ß', 'Ã '=>'à', 'Ã¡'=>'á', 'Ã¢'=>'â', 'Ã£'=>'ã', 'Ã¹'=>'ù', 'Ãº'=>'ú', 'Ã»'=>'û', 'Ã™'=>'Ù', 'Ãš'=>'Ú', 'Ã›'=>'Û', 'Ãœ'=>'Ü', 'Ã²'=>'ò', 'Ã³'=>'ó', 'Ã´'=>'ô', 'Ã¨'=>'è', 'Ã©'=>'é', 'Ãª'=>'ê', 'Ã«'=>'ë', 'Ã€'=>'À', 'Ã'=>'Á', 'Ã‚'=>'Â', 'Ãƒ'=>'Ã', 'Ã„'=>'Ä', 'Ã…'=>'Å', 'Ã‡'=>'Ç', 'Ãˆ'=>'È', 'Ã‰'=>'É', 'ÃŠ'=>'Ê', 'Ã‹'=>'Ë', 'ÃŒ'=>'Ì', 'Ã'=>'Í', 'ÃŽ'=>'Î', 'Ã'=>'Ï', 'Ã‘'=>'Ñ', 'Ã’'=>'Ò', 'Ã“'=>'Ó', 'Ã”'=>'Ô', 'Ã•'=>'Õ', 'Ã˜'=>'Ø', 'Ã¥'=>'å', 'Ã¦'=>'æ', 'Ã§'=>'ç', 'Ã¬'=>'ì', 'Ã­'=>'í', 'Ã®'=>'î', 'Ã¯'=>'ï', 'Ã°'=>'ð', 'Ã±'=>'ñ', 'Ãµ'=>'õ', 'Ã¸'=>'ø', 'Ã½'=>'ý', 'Ã¿'=>'ÿ', 'â‚¬'=>'€' );
 }
@@ -112,5 +121,9 @@ public function FixSC($table,$column) {
 }
 
 }
+
+// important pointers as global vars
+$database = new UE4AM_DBHandler();
+$log->AddLog("UE4AM DB Handler loaded");
 
 ?>

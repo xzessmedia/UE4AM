@@ -2,7 +2,7 @@
 
 /*! \brief The Json Handler is decoding and encoding data between clients and the database
 */
-class UE4_JsonHandler
+class UE4AM_JsonHandler
 {
 private $last_received_jsonarray;
 private $last_data; 
@@ -47,4 +47,8 @@ private $last_data;
 	}
 }
 
+// important pointers as global vars
+$json = new UE4AM_JsonHandler();
+$log->AddLog("UE4AM JsonHandler loaded");
+		
 ?>

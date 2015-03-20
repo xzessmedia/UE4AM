@@ -10,7 +10,7 @@ $dbpassword	=	"root";
 $dbhost	=	"localhost";
 
 /*! Database Prefix for multiple installs*/
-$prefix		=	"UE4AM";
+$prefix		=	"ue4am";
 
 /*! Debug Flag for debug output and logging */
 $debug	=	false;

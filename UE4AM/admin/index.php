@@ -1,8 +1,9 @@
+
 <!DOCTYPE html>
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Director | General UI</title>
+        <title>UE4AM</title>
         <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
         <meta name="description" content="Developed By Tim Koepsel">
         <meta name="keywords" content="Admin, Bootstrap 3,  Responsive">
@@ -23,11 +24,13 @@
           <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
           <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
         <![endif]-->
+        
+
     </head>
     <body class="skin-black">
         <!-- header logo: style can be found in header.less -->
         <header class="header">
-            <a href="index.html" class="logo">
+            <a href="index.php" class="logo">
                 <!-- Add the class icon to your logo image or logo icon to add the margining -->
                 UE4AM
             </a>
@@ -263,31 +266,48 @@
                     </form>
                     <!-- /.search form -->
                     <!-- sidebar menu: : style can be found in sidebar.less -->
-                    <ul class="sidebar-menu">
-                        <li>
-                            <a href="index.html">
-                                <i class="fa fa-dashboard"></i> <span>Dashboard</span>
-                            </a>
-                        </li>
-                        <li class="active">
-                            <a href="general.html">
-                                <i class="fa fa-gavel"></i> <span>General</span>
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="basic_form.html">
-                                <i class="fa fa-globe"></i> <span>Basic Elements</span>
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="simple.html">
-                                <i class="fa fa-glass"></i> <span>Simple tables</span>
-                            </a>
-                        </li>
-
-                    </ul>
+                  <?php 
+                  
+                  	function GetByPage($page)
+                  	{
+	    		switch ($page) {
+	    			case "apps":
+	    			return $activemenu = "Apps";
+	    			break; 
+	    			case "accounts":
+	    			return $activemenu = "Accounts";
+	    			break; 
+	    			case "characters":
+	    			return $activemenu = "Characters";
+	    			break; 
+	    			case "database":
+	    			return $activemenu = "Database";
+	    			break; 
+	    			case "tools":
+	    			return $activemenu = "Tools";
+	    			break; 
+	    			case "logout":
+	    			return $activemenu = "Logout";
+	    			break; 
+	    			
+	    			default:
+	    			return $activemenu = "Dashboard";
+	    			break;
+	    		}
+  		}
+    		$activemenu = "";
+	    		if(isset($_GET['page']))
+	    		{
+	    			$activemenu = GetByPage($_GET['page']);
+	    		} else {
+	    			$activemenu = "Dashboard";
+	    		}
+    		
+                  	require("menu.php");
+                  	
+                  
+                  
+                  ?>
                 </section>
                 <!-- /.sidebar -->
             </aside>
@@ -302,52 +322,23 @@
                             <ul class="breadcrumb">
                                 <li><a href="#"><i class="fa fa-home"></i> Home</a></li>
                                 <li><a href="#">Dashboard</a></li>
-                                <li class="active">Current page</li>
+                                <li class="active"><?php echo $activemenu; ?></li>
                             </ul>
                             <!--breadcrumbs end -->
                         </div>
                     </div>
                     
-                    
-                    
-                    
-
-                                    <!-- Main content -->
-                <section class="content">
-                    <div class="row">
-                      <div class="col-lg-6">
-                          <section class="panel">
-                              <header class="panel-heading">
-                                  Basic Forms
-                              </header>
-                              <div class="panel-body">
-                                  <form role="form">
-                                      <div class="form-group">
-                                          <label for="exampleInputEmail1">Email address</label>
-                                          <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
-                                      </div>
-                                      <div class="form-group">
-                                          <label for="exampleInputPassword1">Password</label>
-                                          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                                      </div>
-                                      <div class="form-group">
-                                          <label for="exampleInputFile">File input</label>
-                                          <input type="file" id="exampleInputFile">
-                                          <p class="help-block">Example block-level help text here.</p>
-                                      </div>
-                                      <div class="checkbox">
-                                          <label>
-                                              <input type="checkbox"> Check me out
-                                          </label>
-                                      </div>
-                                      <button type="submit" class="btn btn-info">Submit</button>
-                                  </form>
-
-                              </div>
-                          </section>
-
-                      
-
+    <?php
+    
+    if(isset($_GET['page']))
+    {
+    require("pages/".$_GET['page'].".html");
+    } else {
+    require("pages/default.html");
+    }
+    
+    ?>
+   
                         </div>
 
                     </div>
@@ -355,10 +346,12 @@
                 </section>
             </div>
             <div class="footer-main">
-                Copyright &copy Director, 2014
+                Copyright &copy UE4AM, 2015
             </div>
         </div><!-- ./wrapper -->
 
+
+  
 
         <!-- jQuery 2.0.2 -->
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>

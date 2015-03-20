@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">UE4AM
-   &#160;<span id="projectnumber">0.12</span>
+   &#160;<span id="projectnumber">0.2</span>
    </div>
   </td>
  </tr>
@@ -40,6 +40,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li class="current"><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
+      <li><a href="files.html"><span>Files</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -62,6 +63,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
       <li><a href="classes.html"><span>Data&#160;Structure&#160;Index</span></a></li>
+      <li><a href="hierarchy.html"><span>Class&#160;Hierarchy</span></a></li>
       <li><a href="functions.html"><span>Data&#160;Fields</span></a></li>
     </ul>
   </div>
@@ -70,7 +72,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -88,33 +90,111 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 
-<p>very simple but helpful log class, which outputs a log.txt on script launch  
+<p>very simple but helpful log class, which outputs a u4am.log on script launch  
  <a href="class_u_e4_a_m___log.html#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a2829609acda49134d831405d48547771"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2829609acda49134d831405d48547771"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>WriteLog</b> ()</td></tr>
+<tr class="memitem:a095c5d389db211932136b53f25f39685"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_e4_a_m___log.html#a095c5d389db211932136b53f25f39685">__construct</a> ()</td></tr>
+<tr class="separator:a095c5d389db211932136b53f25f39685"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2829609acda49134d831405d48547771"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_e4_a_m___log.html#a2829609acda49134d831405d48547771">WriteLog</a> ()</td></tr>
 <tr class="separator:a2829609acda49134d831405d48547771"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8c0d17ad59a3a2b3ecd132a373e664fe"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8c0d17ad59a3a2b3ecd132a373e664fe"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>AddMessage</b> ($var)</td></tr>
+<tr class="memitem:a8c0d17ad59a3a2b3ecd132a373e664fe"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_e4_a_m___log.html#a8c0d17ad59a3a2b3ecd132a373e664fe">AddMessage</a> ($var)</td></tr>
 <tr class="separator:a8c0d17ad59a3a2b3ecd132a373e664fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a39d8548a8e51febcd889ec3fffe0d7ed"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a39d8548a8e51febcd889ec3fffe0d7ed"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>AddLog</b> ($var)</td></tr>
+<tr class="memitem:a39d8548a8e51febcd889ec3fffe0d7ed"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_e4_a_m___log.html#a39d8548a8e51febcd889ec3fffe0d7ed">AddLog</a> ($var)</td></tr>
 <tr class="separator:a39d8548a8e51febcd889ec3fffe0d7ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac26f8c9054a133abb435dd9ff663f6c1"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac26f8c9054a133abb435dd9ff663f6c1"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>AddLogArray</b> ($array)</td></tr>
+<tr class="memitem:ac26f8c9054a133abb435dd9ff663f6c1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_e4_a_m___log.html#ac26f8c9054a133abb435dd9ff663f6c1">AddLogArray</a> ($array)</td></tr>
 <tr class="separator:ac26f8c9054a133abb435dd9ff663f6c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>very simple but helpful log class, which outputs a log.txt on script launch </p>
-</div><hr/>The documentation for this class was generated from the following file:<ul>
-<li>/Users/timkoepsel/Desktop/Archiv/Alter Mist/xzessmedia/Webprojects/UE4AM/inc/log.php</li>
+<div class="textblock"><p>very simple but helpful log class, which outputs a u4am.log on script launch </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="a095c5d389db211932136b53f25f39685"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__construct </td>
+          <td>(</td>
+          <td class="paramname">)</td><td></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a39d8548a8e51febcd889ec3fffe0d7ed"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AddLog </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>$var</em>)</td><td></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ac26f8c9054a133abb435dd9ff663f6c1"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AddLogArray </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>$array</em>)</td><td></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a8c0d17ad59a3a2b3ecd132a373e664fe"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AddMessage </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>$var</em>)</td><td></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a2829609acda49134d831405d48547771"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">WriteLog </td>
+          <td>(</td>
+          <td class="paramname">)</td><td></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following file:<ul>
+<li>inc/<a class="el" href="log_8php.html">log.php</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Mar 13 2015 05:46:04 for UE4AM by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Mar 20 2015 17:25:42 for UE4AM by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.4
 </small></address>

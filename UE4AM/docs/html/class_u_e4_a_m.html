@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">UE4AM
-   &#160;<span id="projectnumber">0.12</span>
+   &#160;<span id="projectnumber">0.2</span>
    </div>
   </td>
  </tr>
@@ -40,6 +40,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li class="current"><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
+      <li><a href="files.html"><span>Files</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -62,6 +63,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
       <li><a href="classes.html"><span>Data&#160;Structure&#160;Index</span></a></li>
+      <li><a href="hierarchy.html"><span>Class&#160;Hierarchy</span></a></li>
       <li><a href="functions.html"><span>Data&#160;Fields</span></a></li>
     </ul>
   </div>
@@ -70,7 +72,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -93,23 +95,39 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a8487f24bc17a5fb3c440807b12784c39"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_e4_a_m.html#a8487f24bc17a5fb3c440807b12784c39">Init</a> ()</td></tr>
-<tr class="separator:a8487f24bc17a5fb3c440807b12784c39"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a095c5d389db211932136b53f25f39685"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_e4_a_m.html#a095c5d389db211932136b53f25f39685">__construct</a> ()</td></tr>
+<tr class="separator:a095c5d389db211932136b53f25f39685"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5ac4d50f77454d7af21c76c7a60baf2d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_e4_a_m.html#a5ac4d50f77454d7af21c76c7a60baf2d">AuthCMD</a> ()</td></tr>
 <tr class="separator:a5ac4d50f77454d7af21c76c7a60baf2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad44656ac65b1fdb9a3b39709c3a757f5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_e4_a_m.html#ad44656ac65b1fdb9a3b39709c3a757f5">Install</a> ()</td></tr>
-<tr class="separator:ad44656ac65b1fdb9a3b39709c3a757f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa6f5d10a7da2bcf6f31c06df2f7268fe"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_e4_a_m.html#aa6f5d10a7da2bcf6f31c06df2f7268fe">IsInstalled</a> ()</td></tr>
-<tr class="separator:aa6f5d10a7da2bcf6f31c06df2f7268fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a94ac6e71c1382409043607a494887265"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_e4_a_m.html#a94ac6e71c1382409043607a494887265">InstallCheck</a> ()</td></tr>
+<tr class="separator:a94ac6e71c1382409043607a494887265"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a70409f254f1875cb8bd0bc93d62b1910"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_e4_a_m.html#a70409f254f1875cb8bd0bc93d62b1910">IsInstalled</a> ($tablename)</td></tr>
+<tr class="separator:a70409f254f1875cb8bd0bc93d62b1910"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac706380317344a4776f5c171383a89bc"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_e4_a_m.html#ac706380317344a4776f5c171383a89bc">ExitWithData</a> ($data)</td></tr>
 <tr class="separator:ac706380317344a4776f5c171383a89bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p><a class="el" href="class_u_e4_a_m.html" title="UE4AM (UE4 AccountManager) This is the main class which handles all communication between database an...">UE4AM</a> (UE4 AccountManager) This is the main class which handles all communication between database and clients. </p>
 <p><a class="el" href="class_u_e4_a_m.html" title="UE4AM (UE4 AccountManager) This is the main class which handles all communication between database an...">UE4AM</a> (UE4 AccountManager)</p>
-<p>You only need to call <a class="el" href="class_u_e4_a_m.html#a8487f24bc17a5fb3c440807b12784c39">Init()</a>; <a class="el" href="class_u_e4_a_m.html#a5ac4d50f77454d7af21c76c7a60baf2d">AuthCMD()</a>;</p>
+<p>You only need to call Init(); <a class="el" href="class_u_e4_a_m.html#a5ac4d50f77454d7af21c76c7a60baf2d">AuthCMD()</a>;</p>
 <p>to process and handle the whole thing </p>
-</div><h2 class="groupheader">Member Function Documentation</h2>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="a095c5d389db211932136b53f25f39685"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__construct </td>
+          <td>(</td>
+          <td class="paramname">)</td><td></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
 <a class="anchor" id="a5ac4d50f77454d7af21c76c7a60baf2d"></a>
 <div class="memitem">
 <div class="memproto">
@@ -125,7 +143,7 @@ Public Member Functions</h2></td></tr>
 <p>The AuthCMD checks if appid and token fit together and then process the command provided by received json array </p>
 <p>Add your custom commands here which can be later accessed by blueprint</p>
 <p>Each command takes its own case</p>
-<p>NOT READY YET - TODO: add functions for all needed commands, see UE4AM_AccountHandler or UE4AM_DBHandler </p>
+<p>NOT READY YET - TODO: add functions for all needed commands, see <a class="el" href="class_u_e4_a_m___account_handler.html" title="The Account Handler is for registering, updating, authorising player accounts. ">UE4AM_AccountHandler</a> or <a class="el" href="class_u_e4_a_m___d_b_handler.html" title="UE4AM DB Handler This class will be instanced by UE4_AccountManager class. It always provides fast an...">UE4AM_DBHandler</a> </p>
 <pre class="fragment">Following values need to be send by blueprint: 
 </pre><p> string email, string username, string password </p>
 <pre class="fragment">Following values need to be send by blueprint: 
@@ -157,65 +175,48 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a8487f24bc17a5fb3c440807b12784c39"></a>
+<a class="anchor" id="a94ac6e71c1382409043607a494887265"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">Init </td>
+          <td class="memname">InstallCheck </td>
           <td>(</td>
           <td class="paramname">)</td><td></td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>The Init Function is the first function you want to start after creating a new instance </p>
+<p>The Install function installs all necessary tables if needed </p>
 
 </div>
 </div>
-<a class="anchor" id="ad44656ac65b1fdb9a3b39709c3a757f5"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">Install </td>
-          <td>(</td>
-          <td class="paramname">)</td><td></td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>The Install function installs all necessary tables </p>
-<p>NOT READY YET - TODO: loop to read the /inc/UE4AM.sql as $sql_install_data string </p>
-
-</div>
-</div>
-<a class="anchor" id="aa6f5d10a7da2bcf6f31c06df2f7268fe"></a>
+<a class="anchor" id="a70409f254f1875cb8bd0bc93d62b1910"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">IsInstalled </td>
           <td>(</td>
-          <td class="paramname">)</td><td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>$tablename</em>)</td><td></td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p>Checks if Database prerequisites are installed </p>
 <p>Check must be more detailed when the whole table structure is final in development</p>
-<p>&lt; Returns true if prerequisites installed</p>
-<p>&lt; Returns false if prerequisites are not installed </p>
+<p>&lt; Returns true if prerequisites installed </p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/Users/timkoepsel/Desktop/Archiv/Alter Mist/xzessmedia/Webprojects/UE4AM/ue4am.php</li>
+<li>inc/<a class="el" href="inc_2ue4am_8php.html">ue4am.php</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Mar 13 2015 05:46:04 for UE4AM by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Mar 20 2015 17:25:42 for UE4AM by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.4
 </small></address>

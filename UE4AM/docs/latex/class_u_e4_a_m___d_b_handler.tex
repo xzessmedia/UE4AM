@@ -1,0 +1,185 @@
+\hypertarget{class_u_e4_a_m___d_b_handler}{\section{U\-E4\-A\-M\-\_\-\-D\-B\-Handler Class Reference}
+\label{class_u_e4_a_m___d_b_handler}\index{U\-E4\-A\-M\-\_\-\-D\-B\-Handler@{U\-E4\-A\-M\-\_\-\-D\-B\-Handler}}
+}
+
+
+\hyperlink{class_u_e4_a_m}{U\-E4\-A\-M} D\-B Handler This class will be instanced by U\-E4\-\_\-\-Account\-Manager class. It always provides fast and easy database access it can be called by using \$database-\/$>$Fetch\-Data(..); i.\-e.  
+
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_u_e4_a_m___d_b_handler_a095c5d389db211932136b53f25f39685}{\-\_\-\-\_\-construct} ()
+\begin{DoxyCompactList}\small\item\em The constructor will automatically call \hyperlink{class_u_e4_a_m___d_b_handler_a9ac768272a054d6ef7e8436f1144b730}{Connect()} \end{DoxyCompactList}\item 
+\hyperlink{class_u_e4_a_m___d_b_handler_a9ac768272a054d6ef7e8436f1144b730}{Connect} ()
+\begin{DoxyCompactList}\small\item\em The connect function connects manually to a D\-B,. \end{DoxyCompactList}\item 
+\hyperlink{class_u_e4_a_m___d_b_handler_aabe8429ec9577391e2ea244fe805c5ec}{Exec\-Sql} (\$sql)
+\begin{DoxyCompactList}\small\item\em Execute S\-Q\-L String. \end{DoxyCompactList}\item 
+\hyperlink{class_u_e4_a_m___d_b_handler_ab8ad12e8a3f2fed48c7e6974e58f6dcd}{Insert\-Data} (\$table, \$sqlcolumns, \$vars)
+\begin{DoxyCompactList}\small\item\em Insert Data into a table. \end{DoxyCompactList}\item 
+\hyperlink{class_u_e4_a_m___d_b_handler_a4c52087a53b72ebcc4b07961dadb908d}{Count\-Data} (\$table, \$sqlcolumns, \$selector)
+\begin{DoxyCompactList}\small\item\em Count all data in a table. \end{DoxyCompactList}\item 
+\hyperlink{class_u_e4_a_m___d_b_handler_a3858bee81ad39a80260c2fc0989ba358}{Fetch\-Data} (\$table, \$sqlcolumns, \$selector)
+\begin{DoxyCompactList}\small\item\em Fetch Data into an array. Usage example\-: \$data = \$database-\/$>$Fetch\-Data(\char`\"{}mytable\char`\"{},\char`\"{}$\ast$\char`\"{},\char`\"{}\-O\-R\-D\-E\-R B\-Y id asc\char`\"{});. \end{DoxyCompactList}\item 
+\hyperlink{class_u_e4_a_m___d_b_handler_a2b7783f4412697ee22ee576658082ff0}{Update\-Data} (\$table, \$params, \$selector)
+\begin{DoxyCompactList}\small\item\em Updates a Data value in a table. \end{DoxyCompactList}\item 
+\hyperlink{class_u_e4_a_m___d_b_handler_a506e0999a4c4050889d2899f4c50ce46}{Remove\-Data} (\$table, \$selector)
+\begin{DoxyCompactList}\small\item\em Removes a Data value in a table. \end{DoxyCompactList}\item 
+\hyperlink{class_u_e4_a_m___d_b_handler_aa34854f1f621fbbe81c8af133952c360}{Clear\-Table} (\$table)
+\begin{DoxyCompactList}\small\item\em Clears all data in a table. \end{DoxyCompactList}\item 
+\hyperlink{class_u_e4_a_m___d_b_handler_a0def1ab6b6f2467524ef53d578204d64}{Protect\-String} (\$string)
+\item 
+\hyperlink{class_u_e4_a_m___d_b_handler_a15e31611d6efcedddeeafd7d25a7e583}{Fix\-S\-C} (\$table, \$column)
+\end{DoxyCompactItemize}
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_u_e4_a_m___d_b_handler_a50ceed0b08e9ad3dcaecc2ac188b2047}{\$is\-Connected} = false
+\begin{DoxyCompactList}\small\item\em Public bool if database is connected to M\-Y\-S\-Q\-L\-D\-B. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{class_u_e4_a_m}{U\-E4\-A\-M} D\-B Handler This class will be instanced by U\-E4\-\_\-\-Account\-Manager class. It always provides fast and easy database access it can be called by using \$database-\/$>$Fetch\-Data(..); i.\-e. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_u_e4_a_m___d_b_handler_a095c5d389db211932136b53f25f39685}{\index{U\-E4\-A\-M\-\_\-\-D\-B\-Handler@{U\-E4\-A\-M\-\_\-\-D\-B\-Handler}!\-\_\-\-\_\-construct@{\-\_\-\-\_\-construct}}
+\index{\-\_\-\-\_\-construct@{\-\_\-\-\_\-construct}!UE4AM_DBHandler@{U\-E4\-A\-M\-\_\-\-D\-B\-Handler}}
+\subsubsection[{\-\_\-\-\_\-construct}]{\setlength{\rightskip}{0pt plus 5cm}\-\_\-\-\_\-construct (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_u_e4_a_m___d_b_handler_a095c5d389db211932136b53f25f39685}
+
+
+The constructor will automatically call \hyperlink{class_u_e4_a_m___d_b_handler_a9ac768272a054d6ef7e8436f1144b730}{Connect()} 
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_u_e4_a_m___d_b_handler_aa34854f1f621fbbe81c8af133952c360}{\index{U\-E4\-A\-M\-\_\-\-D\-B\-Handler@{U\-E4\-A\-M\-\_\-\-D\-B\-Handler}!Clear\-Table@{Clear\-Table}}
+\index{Clear\-Table@{Clear\-Table}!UE4AM_DBHandler@{U\-E4\-A\-M\-\_\-\-D\-B\-Handler}}
+\subsubsection[{Clear\-Table}]{\setlength{\rightskip}{0pt plus 5cm}Clear\-Table (
+\begin{DoxyParamCaption}
+\item[{}]{\$table}
+\end{DoxyParamCaption}
+)}}\label{class_u_e4_a_m___d_b_handler_aa34854f1f621fbbe81c8af133952c360}
+
+
+Clears all data in a table. 
+
+Usage example\-: \$result = \$database-\/$>$Clear\-Table(\char`\"{}mytable\char`\"{}); \hypertarget{class_u_e4_a_m___d_b_handler_a9ac768272a054d6ef7e8436f1144b730}{\index{U\-E4\-A\-M\-\_\-\-D\-B\-Handler@{U\-E4\-A\-M\-\_\-\-D\-B\-Handler}!Connect@{Connect}}
+\index{Connect@{Connect}!UE4AM_DBHandler@{U\-E4\-A\-M\-\_\-\-D\-B\-Handler}}
+\subsubsection[{Connect}]{\setlength{\rightskip}{0pt plus 5cm}Connect (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_u_e4_a_m___d_b_handler_a9ac768272a054d6ef7e8436f1144b730}
+
+
+The connect function connects manually to a D\-B,. 
+
+\hyperlink{class_u_e4_a_m}{U\-E4\-A\-M} automatically handles this! \hypertarget{class_u_e4_a_m___d_b_handler_a4c52087a53b72ebcc4b07961dadb908d}{\index{U\-E4\-A\-M\-\_\-\-D\-B\-Handler@{U\-E4\-A\-M\-\_\-\-D\-B\-Handler}!Count\-Data@{Count\-Data}}
+\index{Count\-Data@{Count\-Data}!UE4AM_DBHandler@{U\-E4\-A\-M\-\_\-\-D\-B\-Handler}}
+\subsubsection[{Count\-Data}]{\setlength{\rightskip}{0pt plus 5cm}Count\-Data (
+\begin{DoxyParamCaption}
+\item[{}]{\$table, }
+\item[{}]{\$sqlcolumns, }
+\item[{}]{\$selector}
+\end{DoxyParamCaption}
+)}}\label{class_u_e4_a_m___d_b_handler_a4c52087a53b72ebcc4b07961dadb908d}
+
+
+Count all data in a table. 
+
+Usage example\-: \$result = \$database-\/$>$Count\-Data(\char`\"{}mytable\char`\"{},\char`\"{}users\char`\"{},\char`\"{}\-W\-H\-E\-R\-E userid=1\char`\"{}); \hypertarget{class_u_e4_a_m___d_b_handler_aabe8429ec9577391e2ea244fe805c5ec}{\index{U\-E4\-A\-M\-\_\-\-D\-B\-Handler@{U\-E4\-A\-M\-\_\-\-D\-B\-Handler}!Exec\-Sql@{Exec\-Sql}}
+\index{Exec\-Sql@{Exec\-Sql}!UE4AM_DBHandler@{U\-E4\-A\-M\-\_\-\-D\-B\-Handler}}
+\subsubsection[{Exec\-Sql}]{\setlength{\rightskip}{0pt plus 5cm}Exec\-Sql (
+\begin{DoxyParamCaption}
+\item[{}]{\$sql}
+\end{DoxyParamCaption}
+)}}\label{class_u_e4_a_m___d_b_handler_aabe8429ec9577391e2ea244fe805c5ec}
+
+
+Execute S\-Q\-L String. 
+
+Usage example\-: \$database-\/$>$Exec\-Sql(\char`\"{}\-S\-E\-L\-E\-C\-T $\ast$ from table\char`\"{}); \hypertarget{class_u_e4_a_m___d_b_handler_a3858bee81ad39a80260c2fc0989ba358}{\index{U\-E4\-A\-M\-\_\-\-D\-B\-Handler@{U\-E4\-A\-M\-\_\-\-D\-B\-Handler}!Fetch\-Data@{Fetch\-Data}}
+\index{Fetch\-Data@{Fetch\-Data}!UE4AM_DBHandler@{U\-E4\-A\-M\-\_\-\-D\-B\-Handler}}
+\subsubsection[{Fetch\-Data}]{\setlength{\rightskip}{0pt plus 5cm}Fetch\-Data (
+\begin{DoxyParamCaption}
+\item[{}]{\$table, }
+\item[{}]{\$sqlcolumns, }
+\item[{}]{\$selector}
+\end{DoxyParamCaption}
+)}}\label{class_u_e4_a_m___d_b_handler_a3858bee81ad39a80260c2fc0989ba358}
+
+
+Fetch Data into an array. Usage example\-: \$data = \$database-\/$>$Fetch\-Data(\char`\"{}mytable\char`\"{},\char`\"{}$\ast$\char`\"{},\char`\"{}\-O\-R\-D\-E\-R B\-Y id asc\char`\"{});. 
+
+foreach (\$data as \$row) \{ \$username = \$row\mbox{[}'username'\mbox{]}; \} \hypertarget{class_u_e4_a_m___d_b_handler_a15e31611d6efcedddeeafd7d25a7e583}{\index{U\-E4\-A\-M\-\_\-\-D\-B\-Handler@{U\-E4\-A\-M\-\_\-\-D\-B\-Handler}!Fix\-S\-C@{Fix\-S\-C}}
+\index{Fix\-S\-C@{Fix\-S\-C}!UE4AM_DBHandler@{U\-E4\-A\-M\-\_\-\-D\-B\-Handler}}
+\subsubsection[{Fix\-S\-C}]{\setlength{\rightskip}{0pt plus 5cm}Fix\-S\-C (
+\begin{DoxyParamCaption}
+\item[{}]{\$table, }
+\item[{}]{\$column}
+\end{DoxyParamCaption}
+)}}\label{class_u_e4_a_m___d_b_handler_a15e31611d6efcedddeeafd7d25a7e583}
+Fix all Special Chars in localized strings\-: \$result = \$database-\/$>$Fix\-S\-C(\char`\"{}mytable\char`\"{},\char`\"{}mycolumn\char`\"{}); \hypertarget{class_u_e4_a_m___d_b_handler_ab8ad12e8a3f2fed48c7e6974e58f6dcd}{\index{U\-E4\-A\-M\-\_\-\-D\-B\-Handler@{U\-E4\-A\-M\-\_\-\-D\-B\-Handler}!Insert\-Data@{Insert\-Data}}
+\index{Insert\-Data@{Insert\-Data}!UE4AM_DBHandler@{U\-E4\-A\-M\-\_\-\-D\-B\-Handler}}
+\subsubsection[{Insert\-Data}]{\setlength{\rightskip}{0pt plus 5cm}Insert\-Data (
+\begin{DoxyParamCaption}
+\item[{}]{\$table, }
+\item[{}]{\$sqlcolumns, }
+\item[{}]{\$vars}
+\end{DoxyParamCaption}
+)}}\label{class_u_e4_a_m___d_b_handler_ab8ad12e8a3f2fed48c7e6974e58f6dcd}
+
+
+Insert Data into a table. 
+
+Usage example\-: \$database-\/$>$Insert\-Data(\char`\"{}mytable\char`\"{},\char`\"{}col1,col2,col3\char`\"{},\char`\"{}var1,var2,var3\char`\"{}); \hypertarget{class_u_e4_a_m___d_b_handler_a0def1ab6b6f2467524ef53d578204d64}{\index{U\-E4\-A\-M\-\_\-\-D\-B\-Handler@{U\-E4\-A\-M\-\_\-\-D\-B\-Handler}!Protect\-String@{Protect\-String}}
+\index{Protect\-String@{Protect\-String}!UE4AM_DBHandler@{U\-E4\-A\-M\-\_\-\-D\-B\-Handler}}
+\subsubsection[{Protect\-String}]{\setlength{\rightskip}{0pt plus 5cm}Protect\-String (
+\begin{DoxyParamCaption}
+\item[{}]{\$string}
+\end{DoxyParamCaption}
+)}}\label{class_u_e4_a_m___d_b_handler_a0def1ab6b6f2467524ef53d578204d64}
+Protect a string to avoid S\-Q\-L Injections Returns the protected string \hypertarget{class_u_e4_a_m___d_b_handler_a506e0999a4c4050889d2899f4c50ce46}{\index{U\-E4\-A\-M\-\_\-\-D\-B\-Handler@{U\-E4\-A\-M\-\_\-\-D\-B\-Handler}!Remove\-Data@{Remove\-Data}}
+\index{Remove\-Data@{Remove\-Data}!UE4AM_DBHandler@{U\-E4\-A\-M\-\_\-\-D\-B\-Handler}}
+\subsubsection[{Remove\-Data}]{\setlength{\rightskip}{0pt plus 5cm}Remove\-Data (
+\begin{DoxyParamCaption}
+\item[{}]{\$table, }
+\item[{}]{\$selector}
+\end{DoxyParamCaption}
+)}}\label{class_u_e4_a_m___d_b_handler_a506e0999a4c4050889d2899f4c50ce46}
+
+
+Removes a Data value in a table. 
+
+Usage example\-: \$result = \$database-\/$>$Remove\-Data(\char`\"{}mytable\char`\"{},\char`\"{}\-W\-H\-E\-R\-E userid=1\char`\"{}); \hypertarget{class_u_e4_a_m___d_b_handler_a2b7783f4412697ee22ee576658082ff0}{\index{U\-E4\-A\-M\-\_\-\-D\-B\-Handler@{U\-E4\-A\-M\-\_\-\-D\-B\-Handler}!Update\-Data@{Update\-Data}}
+\index{Update\-Data@{Update\-Data}!UE4AM_DBHandler@{U\-E4\-A\-M\-\_\-\-D\-B\-Handler}}
+\subsubsection[{Update\-Data}]{\setlength{\rightskip}{0pt plus 5cm}Update\-Data (
+\begin{DoxyParamCaption}
+\item[{}]{\$table, }
+\item[{}]{\$params, }
+\item[{}]{\$selector}
+\end{DoxyParamCaption}
+)}}\label{class_u_e4_a_m___d_b_handler_a2b7783f4412697ee22ee576658082ff0}
+
+
+Updates a Data value in a table. 
+
+Usage example\-: \$result = \$database-\/$>$Update\-Data(\char`\"{}mytable\char`\"{},\char`\"{}username='\-Hans'\char`\"{},\char`\"{}\-W\-H\-E\-R\-E userid=1\char`\"{}); 
+
+\subsection{Field Documentation}
+\hypertarget{class_u_e4_a_m___d_b_handler_a50ceed0b08e9ad3dcaecc2ac188b2047}{\index{U\-E4\-A\-M\-\_\-\-D\-B\-Handler@{U\-E4\-A\-M\-\_\-\-D\-B\-Handler}!\$is\-Connected@{\$is\-Connected}}
+\index{\$is\-Connected@{\$is\-Connected}!UE4AM_DBHandler@{U\-E4\-A\-M\-\_\-\-D\-B\-Handler}}
+\subsubsection[{\$is\-Connected}]{\setlength{\rightskip}{0pt plus 5cm}\$is\-Connected = false}}\label{class_u_e4_a_m___d_b_handler_a50ceed0b08e9ad3dcaecc2ac188b2047}
+
+
+Public bool if database is connected to M\-Y\-S\-Q\-L\-D\-B. 
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+inc/\hyperlink{dbhandler_8php}{dbhandler.\-php}\end{DoxyCompactItemize}

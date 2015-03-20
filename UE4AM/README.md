@@ -6,5 +6,4 @@ Install Notes for UE4AM:
 
 1. Upload all files to a webspace of your choice with PHP and MySQL installed
 2. Edit /inc/settings.php with Notepad and setup your database there
-3. Edit /inc/ue4am.sql with Notepad and setup your characters table (add all fields your game clients will need)
-4. Call the script by navigating to the webspace and calling ue4am.php to install all SQL Tables
+3. Call the script by navigating to the webspace and calling ue4am.php to install all SQL Tables
